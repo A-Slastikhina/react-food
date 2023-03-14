@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
      <React.Fragment>
-     <Router>
+     <Router basename="/react-food">
         <Header/>
         <main className="main-content container">
             <Routes>
