@@ -7,17 +7,17 @@ import { Search } from '../components/Search';
 function Home() {
   const [catalog, setCatalog] = useState([]);
   const [filteredCatalog, setFilteredCatalog] = useState([]);
-  const { pathname, search } = useLocation;
+  const { pathname, search } = useLocation();
   const navigate = useNavigate();
 
   const handleSearch = (str) => {
+    console.log(search)
     setFilteredCatalog(
       catalog.filter((item) =>
         item.strCategory.toLowerCase().includes(str.toLowerCase())
       )
     );
     navigate(`/?search=${str}`);
-
   };
  
   useEffect(() => {
@@ -28,6 +28,7 @@ function Home() {
           item.strCategory
             .toLowerCase()
             .includes(search.split('=')[1].toLowerCase())
+
         ) : data.categories
       );
     });

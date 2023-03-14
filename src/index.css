@@ -14,6 +14,9 @@ body {
 }
 .main-content{
   padding-top: 30px;
+  min-height: calc(100vh - 50px - 63.99px);
+  padding-top: 50px;
+
 }
 .cards-container{
   display: grid;
